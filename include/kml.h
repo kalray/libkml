@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2008-2017 Kalray SA.
+ *
+ * All rights reserved.
+ */
+
 /**
  * \defgroup lib_kml lib_kml
  * \brief Implementation Elementary Functions

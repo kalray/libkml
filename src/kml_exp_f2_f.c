@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2008-2017 Kalray SA.
+ *
+ * All rights reserved.
+ */
+
 /** function generated using metalibm git log:
  commit a581a29298c90d93f4952385c0982c9815d7cec0
 Author: Nicolas Brunie <nicolas.brunie@kalray.eu>

@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2008-2017 Kalray SA.
+ *
+ * All rights reserved.
+ */
+
 /**
  * generated using metalibm 0.1 
  *  sha1 git: a9c32dda8a01eb1ef3c3441995e32447456f0dd6 
