@@ -1,0 +1,61 @@
+
+use-module := ctest
+
+cluster-bin += kml_exp_f2_f_test kml_log_f2_f_test \
+               kml_exp_d2_f_test kml_log_d2_f_test \
+               kml_sin_f2_f_test kml_cos_f2_f_test
+
+kml_exp_f2_f_test-srcs   := $(KML_SRC_DIR)/tests/ml_k1_k1b_exp2f_test_vectors_0.c $(KML_COMMON_FLOAT_SRCS) 
+kml_exp_f2_f_test-cflags := $(KML_TEST_FLAGS) -DTEST_FUNCTION=kml_exp_f2_f
+kml_exp_f2_f_test-name   := kml_exp_f2_f_test
+kml_exp_f2_f_test-lflags := -lkml -lm
+kml_exp_f2_f_test-deps   := kml
+kml_exp_f2_f_test-sim-cmd := kml_exp_f2_f_test
+kml_exp_f2_f_test-jtag-cmd := kml_exp_f2_f_test
+
+kml_log_f2_f_test-srcs   := $(KML_SRC_DIR)/tests/ml_k1_k1b_log2f_test_vectors_0.c $(KML_COMMON_FLOAT_SRCS) 
+kml_log_f2_f_test-cflags := $(KML_TEST_FLAGS) -DTEST_FUNCTION=kml_log_f2_f
+kml_log_f2_f_test-name   := kml_log_f2_f_test
+kml_log_f2_f_test-lflags :=  -lkml -lm
+kml_log_f2_f_test-deps   := kml
+kml_log_f2_f_test-sim-cmd := kml_log_f2_f_test
+kml_log_f2_f_test-jtag-cmd := kml_log_f2_f_test
+
+kml_exp_d2_f_test-srcs := $(KML_SRC_DIR)/tests/ml_k1_k1b_exp2d_test_vectors_0.c $(KML_COMMON_DOUBLE_SRCS) 
+kml_exp_d2_f_test-cflags := $(KML_TEST_FLAGS) -DTEST_FUNCTION=kml_exp_d2_f
+kml_exp_d2_f_test-name   := kml_exp_d2_f_test
+kml_exp_d2_f_test-lflags :=  -lkml -lm
+kml_exp_d2_f_test-deps := kml
+kml_exp_d2_f_test-sim-cmd := kml_exp_d2_f_test
+kml_exp_d2_f_test-jtag-cmd := kml_exp_d2_f_test
+
+kml_log_d2_f_test-srcs   := $(KML_SRC_DIR)/tests/ml_k1_k1b_log2d_test_vectors_0.c $(KML_COMMON_DOUBLE_SRCS) 
+kml_log_d2_f_test-cflags := $(KML_TEST_FLAGS) -DTEST_FUNCTION=kml_log_d2_f
+kml_log_d2_f_test-name   := kml_log_d2_f_test
+kml_log_d2_f_test-lflags :=  -lkml -lm
+kml_log_d2_f_test-deps   := kml
+kml_log_d2_f_test-sim-cmd := kml_log_d2_f_test
+kml_log_d2_f_test-jtag-cmd := kml_log_d2_f_test
+
+
+kml_cos_f2_f_test-srcs    := $(KML_SRC_DIR)/tests/test_kml_cos_f2_f.c $(KML_SUPPORT_SRCS) 
+kml_cos_f2_f_test-cflags  := $(KML_CFLAGS) 
+kml_cos_f2_f_test-name    := kml_cos_f2_f_test
+kml_cos_f2_f_test-lflags  :=  -lkml -lm
+kml_cos_f2_f_test-deps    := kml
+kml_cos_f2_f_test-sim-cmd := kml_cos_f2_f_test
+kml_cos_f2_f_test-jtag-cmd := kml_cos_f2_f_test
+#kml_cos_f2_f_test-labels  := functional
+
+kml_sin_f2_f_test-srcs    := $(KML_SRC_DIR)/tests/test_kml_sin_f2_f.c $(KML_SUPPORT_SRCS) 
+kml_sin_f2_f_test-cflags  := $(KML_CFLAGS) 
+kml_sin_f2_f_test-name    := kml_sin_f2_f_test
+kml_sin_f2_f_test-lflags  :=  -lkml -lm
+kml_sin_f2_f_test-deps    := kml
+kml_sin_f2_f_test-sim-cmd := kml_sin_f2_f_test
+kml_sin_f2_f_test-jtag-cmd := kml_sin_f2_f_test
+#kml_sin_f2_f_test-labels  := functional
+
+cluster-tests += kml_exp_d2_f_test kml_exp_f2_f_test \
+                 kml_log_d2_f_test kml_log_f2_f_test \
+				 kml_cos_f2_f_test kml_sin_f2_f_test 
