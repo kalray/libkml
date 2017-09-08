@@ -165,27 +165,26 @@ int main(void) {
             __k1_fpu_clear_exceptions(_K1_FPU_ALL_EXCEPTS);
             #endif /* __K1__ */
             float result = TEST_FUNCTION(input_0);
-            #ifdef __K1__
+#   ifndef DISABLE_EV
+#       ifdef __K1__
             int fpu_ev = __k1_fpu_get_exceptions() >> 1; 
-            #else
+#       else
             int fpu_ev = 0; 
-            #endif /* __K1__ */
+#       endif /* __K1__ */
+#   endif /** DISABLE_EV */
 
             #endif /*PERF_TEST */
 
-            
+
 
             #ifdef KML_MODE
             float expected_rd = float_from_32b_encoding(test_array[i].result_down.faithful_value);
             float expected_ru = float_from_32b_encoding(test_array[i].result_up.faithful_value);
-            float expected_cr = float_from_32b_encoding(test_array[i].cr_value);
-    
             #else /* ! KML_MODE */
             float expected_rd = float_from_32b_encoding(test_array[i].result_down.value);
             float expected_ru = float_from_32b_encoding(test_array[i].result_up.value);
-            float expected_cr = float_from_32b_encoding(test_array[i].cr_value);
             #endif
-    
+
 
                 if (!fp32_is_faithful(expected_rd, expected_ru, result)) {
         #ifndef RTL_RUN
