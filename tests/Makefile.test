@@ -1,3 +1,25 @@
+#
+# MIT License
+#
+# Copyright (c) 2016-2017 Kalray
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
 
 use-module := ctest
 
@@ -45,7 +67,6 @@ kml_cos_f2_f_test-lflags  :=  -lkml -lm
 kml_cos_f2_f_test-deps    := kml
 kml_cos_f2_f_test-sim-cmd := kml_cos_f2_f_test
 kml_cos_f2_f_test-jtag-cmd := kml_cos_f2_f_test
-#kml_cos_f2_f_test-labels  := functional
 
 kml_sin_f2_f_test-srcs    := $(KML_SRC_DIR)/tests/test_kml_sin_f2_f.c $(KML_SUPPORT_SRCS) 
 kml_sin_f2_f_test-cflags  := $(KML_CFLAGS) 
@@ -54,7 +75,6 @@ kml_sin_f2_f_test-lflags  :=  -lkml -lm
 kml_sin_f2_f_test-deps    := kml
 kml_sin_f2_f_test-sim-cmd := kml_sin_f2_f_test
 kml_sin_f2_f_test-jtag-cmd := kml_sin_f2_f_test
-#kml_sin_f2_f_test-labels  := functional
 
 cluster-tests += kml_exp_d2_f_test kml_exp_f2_f_test \
                  kml_log_d2_f_test kml_log_f2_f_test \
